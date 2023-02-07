@@ -2,4 +2,14 @@
 
 {%block content%}
 <h1>Delete</h1>
+<div>
+    <form action="" method="POST">
+        {%csrf_token%} 
+        <div>
+            <label for="pk">Type the primary key of your car:</label>
+            <input type="text" id="pk" name="pk">
+        </div>
+        <input type="submit">
+    </form>
+</div>
 {%endblock%}

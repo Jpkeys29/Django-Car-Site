@@ -30,4 +30,14 @@ def add(request):
 
 
 def delete(request):
-    return render(request,'cars/delete.html')
+    if request.POST:
+        #delete the car
+        pk = request.POST['pk']
+        try: #if user enters pk
+            models.Car.objects.get(pk=pk).delete() 
+            return redirect(reverse('cars:list'))
+        except: #if user enter an unexistent pk
+            print('primary key not found')
+            return redirect(reverse('cars:list'))        
+    else:
+        return render(request,'cars/delete.html')
