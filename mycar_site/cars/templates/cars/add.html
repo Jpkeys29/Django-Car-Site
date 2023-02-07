@@ -4,14 +4,15 @@
 <h1>Add a new car!</h1>
 
 <form action="" method="POST">
-    <div>
+    {% csrf_token %}
+    <div class="form-group">
         <label for="brand">Brand:</label>
-        <input type="text" id="brand" name="brand">
+        <input class="form-control" type="text" id="brand" name="brand">
     </div>
-    <div>
+    <div class="form-group">
         <label for="year">Year:</label>
-        <input type="text" id="year" name="year">
+        <input class="form-control" type="text" id="year" name="year">
     </div>
-    <input type="submit" value="New Car!">
+    <input class='btn btn-primary' type="submit" value="New Car!">
 </form>
 {%endblock%}
